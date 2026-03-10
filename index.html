@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAI Kelas 5 - Akhlak Mulia</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header dengan Navigasi -->
+        <header>
+            <div class="logo-container">
+                <!-- Logo UPI dari file logo.jpeg -->
+                <img src="logo.jpeg" alt="Logo UPI" class="logo-upi">
+                <div class="logo">
+                    <i class="fas fa-mosque"></i> PAI Kelas 5
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="nav-link active" data-page="home"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#" class="nav-link" data-page="materi"><i class="fas fa-book-open"></i> Materi</a></li>
+                    <li><a href="#" class="nav-link" data-page="quiz"><i class="fas fa-puzzle-piece"></i> Kuis</a></li>
+                    <li><a href="#" class="nav-link" data-page="game"><i class="fas fa-gamepad"></i> Game</a></li>
+                    <li><a href="#" class="nav-link" data-page="profil"><i class="fas fa-user-graduate"></i> Profil</a></li>
+                    <li><a href="#" class="nav-link" data-page="tim"><i class="fas fa-users"></i> Tim Pengembang</a></li>
+                </ul>
+            </nav>
+            <div class="user-badge" id="userBadge">
+                <i class="fas fa-star" style="color: gold;"></i> <span id="userPointDisplay">0</span> Poin
+            </div>
+        </header>
+
+        <!-- Area Konten yang Berubah (Multi-Page) -->
+        <main id="main-content">
+            <!-- Halaman akan di-load secara dinamis oleh script.js -->
+        </main>
+
+        <!-- Footer -->
+        <footer>
+            <p><i class="fas fa-heart" style="color: #ff6b6b;"></i> Akhlak Mulia, Cermin Muslim Sejati <i class="fas fa-heart" style="color: #ff6b6b;"></i></p>
+        </footer>
+    </div>
+
+    <!-- Modal Login (Muncul jika belum login) -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <h2><i class="fas fa-lock"></i> Login Siswa</h2>
+            <p>Masukkan nama kamu untuk memulai petualangan akhlak mulia!</p>
+            <input type="text" id="studentName" placeholder="Nama Lengkap" required>
+            <input type="text" id="studentClass" placeholder="Kelas (contoh: 5A)" required>
+            <button id="loginBtn" class="btn-gold">Masuk <i class="fas fa-sign-in-alt"></i></button>
+            <p class="info-text">*Data disimpan di browser kamu.</p>
+        </div>
+    </div>
+
+    <!-- Modal Konfirmasi Hapus Data -->
+    <div id="hapusModal" class="modal">
+        <div class="modal-content" style="max-width: 400px;">
+            <h2><i class="fas fa-exclamation-triangle" style="color: #dc3545;"></i> Konfirmasi Hapus Data</h2>
+            <p style="margin: 20px 0;">Apakah Anda yakin ingin menghapus semua data? Data yang dihapus tidak dapat dikembalikan.</p>
+            <div style="display: flex; gap: 10px; justify-content: center;">
+                <button class="btn-gold" id="konfirmasiHapus" style="background: #dc3545;">Ya, Hapus</button>
+                <button class="btn-gold" id="batalHapus">Batal</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Panduan Penggunaan (dengan langkah-langkah detail) -->
+    <div id="panduanModal" class="modal">
+        <div class="modal-content" style="max-width: 600px; max-height: 80vh; overflow-y: auto;">
+            <h2><i class="fas fa-book" style="color: #D4AF37;"></i> Panduan Penggunaan Website</h2>
+            
+            <div style="text-align: left; margin: 20px 0;">
+                <!-- Pengenalan Website dan Nama HARMONI -->
+                <div style="background: linear-gradient(135deg, #1B4D3E, #2A6B5E); border-radius: 15px; padding: 20px; margin-bottom: 25px; border: 3px solid #D4AF37; color: white; text-align: center;">
+                    <h3 style="color: #D4AF37; margin-bottom: 15px; font-size: 1.8rem;">HARMONI</h3>
+                    <p style="font-size: 1.2rem; margin-bottom: 10px; font-style: italic;">"Hargai Perbedaan, Momen Kebersamaan, Niatkan Kebaikan"</p>
+                    <p style="margin-top: 15px; font-size: 1rem;">Website pembelajaran PAI untuk kelas 5 SD yang mengajarkan tentang akhlak mulia: Kejujuran, Tanggung Jawab, serta Saling Menghargai & Menghormati. Mari belajar bersama dalam harmoni!</p>
+                </div>
+
+                <div style="background: #f8f9fa; border-radius: 15px; padding: 15px; margin-bottom: 15px; border-left: 5px solid #D4AF37;">
+                    <h3 style="color: #1B4D3E; margin-bottom: 10px;"><i class="fas fa-sign-in-alt" style="color: #D4AF37; margin-right: 8px;"></i> Langkah 1: Login</h3>
+                    <p style="margin-left: 25px;">✓ Masukkan Nama Lengkap dan Kelas (contoh: 5A)</p>
+                    <p style="margin-left: 25px;">✓ Klik tombol "Masuk" untuk memulai</p>
+                    <p style="margin-left: 25px;">✓ Data akan disimpan otomatis di browser kamu</p>
+                </div>
+
+                <div style="background: #f8f9fa; border-radius: 15px; padding: 15px; margin-bottom: 15px; border-left: 5px solid #D4AF37;">
+                    <h3 style="color: #1B4D3E; margin-bottom: 10px;"><i class="fas fa-home" style="color: #D4AF37; margin-right: 8px;"></i> Langkah 2: Halaman Home</h3>
+                    <p style="margin-left: 25px;">✓ Menyambut siswa dengan ucapan selamat datang</p>
+                    <p style="margin-left: 25px;">✓ Menampilkan fitur-fitur unggulan website</p>
+                    <p style="margin-left: 25px;">✓ Klik "Panduan Penggunaan" untuk melihat petunjuk ini</p>
+                </div>
+
+                <div style="background: #f8f9fa; border-radius: 15px; padding: 15px; margin-bottom: 15px; border-left: 5px solid #D4AF37;">
+                    <h3 style="color: #1B4D3E; margin-bottom: 10px;"><i class="fas fa-book-open" style="color: #D4AF37; margin-right: 8px;"></i> Langkah 3: Belajar Materi</h3>
+                    <p style="margin-left: 25px;">✓ Klik menu "Materi" untuk memulai belajar</p>
+                    <p style="margin-left: 25px;">✓ Pilih salah satu dari 3 materi: Kejujuran, Tanggung Jawab, atau Saling Menghargai & Menghormati</p>
+                    <p style="margin-left: 25px;">✓ Klik tombol "Baca Materi" untuk membaca penjelasan lengkap</p>
+                    <p style="margin-left: 25px;">✓ Baca dengan saksama karena materi akan diujikan di kuis</p>
+                </div>
+
+                <div style="background: #f8f9fa; border-radius: 15px; padding: 15px; margin-bottom: 15px; border-left: 5px solid #D4AF37;">
+                    <h3 style="color: #1B4D3E; margin-bottom: 10px;"><i class="fas fa-puzzle-piece" style="color: #D4AF37; margin-right: 8px;"></i> Langkah 4: Mengerjakan Kuis</h3>
+                    <p style="margin-left: 25px;">✓ Klik menu "Kuis" untuk melihat pilihan kuis</p>
+                    <p style="margin-left: 25px;">✓ Tersedia 4 kuis dengan 10 soal masing-masing:</p>
+                    <p style="margin-left: 40px;">- Kuis 1: Soal tentang Kejujuran</p>
+                    <p style="margin-left: 40px;">- Kuis 2: Soal tentang Tanggung Jawab</p>
+                    <p style="margin-left: 40px;">- Kuis 3: Soal tentang Saling Menghargai & Menghormati</p>
+                    <p style="margin-left: 40px;">- Kuis 4: Soal gabungan dari semua materi</p>
+                    <p style="margin-left: 25px;">✓ Pilih kuis yang ingin dikerjakan</p>
+                    <p style="margin-left: 25px;">✓ Jawab 10 soal pilihan ganda dengan memilih salah satu opsi</p>
+                    <p style="margin-left: 25px;">✓ Setiap jawaban benar mendapat 10 poin (total 100 poin per kuis)</p>
+                    <p style="margin-left: 25px;">✓ Klik "Soal Selanjutnya" untuk melanjutkan</p>
+                    <p style="margin-left: 25px;">✓ Setelah selesai, klik "Selesai" untuk melihat skor</p>
+                </div>
+
+                <div style="background: #f8f9fa; border-radius: 15px; padding: 15px; margin-bottom: 15px; border-left: 5px solid #D4AF37;">
+                    <h3 style="color: #1B4D3E; margin-bottom: 10px;"><i class="fas fa-gamepad" style="color: #D4AF37; margin-right: 8px;"></i> Langkah 5: Bermain Game</h3>
+                    <p style="margin-left: 25px;">✓ Klik menu "Game" untuk melihat pilihan game</p>
+                    <p style="margin-left: 25px;">✓ Tersedia 3 game seru:</p>
+                    <p style="margin-left: 40px;">- Game 1: Frog Jump</p>
+                    <p style="margin-left: 40px;">- Game 2: Spin Wheel</p>
+                    <p style="margin-left: 40px;">- Game 3: Zep Quiz</p>
+                    <p style="margin-left: 25px;">✓ Klik salah satu game untuk membuka di tab baru</p>
+                    <p style="margin-left: 25px;">✓ Ikuti petunjuk permainan di masing-masing game tersebut</p>
+                </div>
+
+                <div style="background: #f8f9fa; border-radius: 15px; padding: 15px; margin-bottom: 15px; border-left: 5px solid #D4AF37;">
+                    <h3 style="color: #1B4D3E; margin-bottom: 10px;"><i class="fas fa-user-graduate" style="color: #D4AF37; margin-right: 8px;"></i> Langkah 6: Melihat Profil</h3>
+                    <p style="margin-left: 25px;">✓ Klik menu "Profil" untuk melihat data diri</p>
+                    <p style="margin-left: 25px;">✓ Lihat total poin yang sudah dikumpulkan</p>
+                    <p style="margin-left: 25px;">✓ Lihat riwayat nilai kuis yang pernah dikerjakan</p>
+                    <p style="margin-left: 25px;">✓ Poin akan terus bertambah setiap mengerjakan kuis</p>
+                    <p style="margin-left: 25px;">✓ Gunakan tombol "Hapus Data" untuk menghapus semua data yang tersimpan</p>
+                </div>
+
+                <div style="background: #f8f9fa; border-radius: 15px; padding: 15px; margin-bottom: 15px; border-left: 5px solid #D4AF37;">
+                    <h3 style="color: #1B4D3E; margin-bottom: 10px;"><i class="fas fa-users" style="color: #D4AF37; margin-right: 8px;"></i> Langkah 7: Melihat Tim Pengembang</h3>
+                    <p style="margin-left: 25px;">✓ Klik menu "Tim Pengembang" untuk melihat informasi tim pembuat website</p>
+                    <p style="margin-left: 25px;">✓ Terdapat 5 anggota tim pengembang</p>
+                </div>
+
+                <div style="background: #e8f4f8; border-radius: 15px; padding: 15px; margin-top: 20px; border: 2px solid #D4AF37;">
+                    <h3 style="color: #1B4D3E; margin-bottom: 10px;"><i class="fas fa-star" style="color: gold; margin-right: 8px;"></i> Tips Belajar</h3>
+                    <p style="margin-left: 25px;">✓ Baca materi terlebih dahulu sebelum mengerjakan kuis</p>
+                    <p style="margin-left: 25px;">✓ Kerjakan kuis dengan jujur dan teliti</p>
+                    <p style="margin-left: 25px;">✓ Kumpulkan poin sebanyak-banyaknya</p>
+                    <p style="margin-left: 25px;">✓ Mainkan game untuk belajar sambil bersenang-senang</p>
+                    <p style="margin-left: 25px;">✓ Selamat belajar, semoga sukses!</p>
+                </div>
+            </div>
+            
+            <button class="btn-gold" id="tutupPanduan" style="width: 100%;">Tutup Panduan</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
