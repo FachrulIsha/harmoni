@@ -1147,7 +1147,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         <p>Spin Wheel - Wordwall</p>
                     </a>
                     
-                    <a href="https://quiz.zep.us/en/play/5r6zZY" target="_blank" class="game-button-item">
+                    <a href="https://quiz.zep.us/en/play/dJR1bj" target="_blank" class="game-button-item">
                         <i class="fas fa-question-circle"></i>
                         <h3>Game 3</h3>
                         <p>Kuis Interaktif - Zep Quiz</p>
